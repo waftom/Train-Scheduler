@@ -39,12 +39,21 @@ function call_firebase() {
                 moment.add(newRow.frequency, 'm');
             }
         }
-        var next = moment.hour() + ":" + moment.minute();
+        var next;
+        var minu = '';
+        if(moment.minute() < 10) {
+            minu = '0';
+        }
+        if(moment.hour() > 12) {
+            next = (moment.hour() - 12) + ":" + minu + moment.minute() + " PM";
+        } else {
+            next = moment.hour() + ":" + minu + moment.minute() + " AM";
+        }
 
         // Get the minutes away
         moment.subtract(h, 'h');
         moment.subtract(m, 'm');
-        var away = moment.minute();
+        var away = (moment.hour() * 60) + moment.minute();
 
         // Append all data to the table
         $('#table').append("<tr class='remove'><td>" + newRow.trainName + "</td><td>" + newRow.destination + "</td><td>" + newRow.frequency + "</td><td>" + next + "</td><td>" + away + "</td></tr>");
