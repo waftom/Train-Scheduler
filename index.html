@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework Train</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        .panel-body a {
+            word-break: break-all;
+        }
+        .subtitle, #submitButton {
+            background-color: #0066cc !important;
+            border: 1px solid #0066cc !important;
+        }
+        .panel-primary {
+            border: 1px solid #0066cc !important;
+        }
+        .jumbotron {
+            background-color: #663300 !important;
+            color: white;
+        }
+        #table tr {
+            border-bottom: 1px solid #F2F2F2;
+        }
+        #table tr:last-child {
+            border-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center"><strong></i>Anytime is Train Time</strong></h1><h3 class="text-center">Choo Choo. Chee Chee.</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <div class="panel panel-primary">
+                    <div class="panel-heading subtitle">
+                        <h3 class="panel-title"><strong></i>Current Train Schedule</strong> (Updates every minute)</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table" id="table">
+                            <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Frequency (min)</th>
+                                <th>Next Arrival</th>
+                                <th>Minutes Away</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <div class="panel panel-primary">
+                    <div class="panel-heading subtitle">
+                        <h3 class="panel-title"><strong>Add Train</strong></h3>
+                    </div>
+                    <div class="panel-body" id="currentEmployees">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="search">Train Name</label>
+                                <input type="text" class="form-control" id="trainName">
+                            </div>
+                            <div class="form-group">
+                                <label for="start-year">Destination</label>
+                                <input type="text" class="form-control" id="destination">
+                            </div>
+                            <div class="form-group">
+                                <label for="end-year">First Train Time (HH:mm - military time)</label>
+                                <input type="text" class="form-control" id="firstDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="end-year">Frequency (min) Rate</label>
+                                <input type="text" class="form-control" id="frequency">
+                            </div>
+                            <button type="submit" class="btn btn-default" id="submitButton"></i> Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://momentjs.com/downloads/moment.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
